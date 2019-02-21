@@ -15,7 +15,7 @@ var camera, scene, renderer;
 
 var materials, current_material;
 
-var light, pointLight, ambientLight;
+var light, ambientLight;
 
 var effect, resolution;
 
@@ -53,10 +53,6 @@ function init() {
   light = new THREE.DirectionalLight("#ACD2FF");
   light.position.set(0.5, 0.5, 1);
   scene.add(light);
-
-  pointLight = new THREE.PointLight(0xff3300);
-  pointLight.position.set(0, 0, 100);
-  //scene.add(pointLight);
 
   ambientLight = new THREE.AmbientLight("#ACD2FF");
   scene.add(ambientLight);
@@ -357,12 +353,6 @@ function render() {
     effectController.lz
   );
   light.position.normalize();
-
-  // pointLight.color.setHSL(
-  //   effectController.lhue,
-  //   effectController.lsaturation,
-  //   effectController.llightness
-  // );
 
   // render
 

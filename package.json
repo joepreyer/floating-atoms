@@ -1,0 +1,19 @@
+{
+  "name": "floating_blobs",
+  "version": "1.0.0",
+  "description": "Floating and merging blobs with ThreeJS",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joepreyer/floating-atoms.git"
+  },
+  "author": "Joseph Preyer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joepreyer/floating-atoms/issues"
+  },
+  "homepage": "https://github.com/joepreyer/floating-atoms#readme"
+}
