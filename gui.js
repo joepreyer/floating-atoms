@@ -29,20 +29,16 @@ function setupGui() {
     wallx: false,
     wallz: false,
 
-    hue: 0.575,
-    saturation: 0.55,
-    lightness: 0.675,
+    r: 255,
+    g: 200,
+    b: 0,
 
-    lhue: 0.04,
-    lsaturation: 1.0,
-    llightness: 0.5,
-
-    lx: 0.5,
-    ly: 0.5,
-    lz: 1.0,
+    lx: 1,
+    ly: -1,
+    lz: 1,
 
     postprocessing: true,
-    blurLevel: 12,
+    blurLevel: 20,
 
     dummy: function() {}
   };
@@ -64,17 +60,9 @@ function setupGui() {
 
   h = gui.addFolder("Material color");
 
-  m_h = h.add(effectController, "hue", 0.0, 1.0, 0.025);
-  m_s = h.add(effectController, "saturation", 0.0, 1.0, 0.025);
-  m_l = h.add(effectController, "lightness", 0.0, 1.0, 0.025);
-
-  // light (point)
-
-  h = gui.addFolder("Point light color");
-
-  h.add(effectController, "lhue", 0.0, 1.0, 0.025).name("hue");
-  h.add(effectController, "lsaturation", 0.0, 1.0, 0.025).name("saturation");
-  h.add(effectController, "llightness", 0.0, 1.0, 0.025).name("lightness");
+  m_h = h.add(effectController, "r", 0, 255, 1);
+  m_s = h.add(effectController, "g", 0, 255, 1);
+  m_l = h.add(effectController, "b", 0, 255, 1);
 
   // light (directional)
 

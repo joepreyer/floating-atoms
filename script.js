@@ -46,7 +46,7 @@ function init() {
   // SCENE
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color("#ACD2FF"); // Set background color
+  scene.background = new THREE.Color("#FEF0E6"); // Set background color
 
   // LIGHTS
 
@@ -60,7 +60,7 @@ function init() {
   // MATERIALS
 
   materials = generateMaterials();
-  current_material = "testMaterial";
+  current_material = "toon1";
 
   // MARCHING CUBES
 
@@ -131,7 +131,7 @@ function init() {
   hblur = new THREE.ShaderPass(THREE.HorizontalTiltShiftShader);
   vblur = new THREE.ShaderPass(THREE.VerticalTiltShiftShader);
 
-  var bluriness = effectController.blurLevel;
+  var bluriness = 18; //effectController.blurLevel;
 
   hblur.uniforms["h"].value = bluriness / SCREEN_WIDTH;
   vblur.uniforms["v"].value = bluriness / SCREEN_HEIGHT;
@@ -332,16 +332,16 @@ function render() {
   // materials
 
   if (effect.material instanceof THREE.ShaderMaterial) {
-    effect.material.uniforms.uBaseColor.value.setHSL(
-      effectController.hue,
-      effectController.saturation,
-      effectController.lightness
+    effect.material.uniforms.uBaseColor.value.setRGB(
+      effectController.r / 255.0,
+      effectController.g / 255.0,
+      effectController.b / 255.0
     );
   } else {
-    effect.material.color.setHSL(
-      effectController.hue,
-      effectController.saturation,
-      effectController.lightness
+    effect.material.color.setRGB(
+      effectController.r / 255.0,
+      effectController.g / 255.0,
+      effectController.b / 255.0
     );
   }
 
